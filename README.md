@@ -40,8 +40,6 @@ swift generate.swift schema.sql
 This will generate a `generated.swift` file in your current directory. The generated file might look something like this:
 
 ```swift
-// Generated using GenerateStructs.swift
-// DO NOT EDIT
 
 import Foundation
 
