@@ -13,14 +13,20 @@ This Swift script generates Swift structs from a Supabase SQL schema file. It's 
 ## Requirements
 
 - Swift 5.0 or later
-- macOS or Linux environment
+- macOS environment
 - Supabase project with a SQL schema file
+- Supabase CLI (for generating the schema file)
 
 ## Usage
 
 1. Ensure you have Swift installed on your system.
 2. Save the `generate.swift` script to your project directory.
-3. Export your Supabase SQL schema (usually named `schema.sql`) and place it in your project root.
+3. Use the Supabase CLI to generate your SQL schema file:
+
+```bash
+supabase db dump -f schema.sql
+```
+
 4. Run the script from the command line, providing the path to your SQL schema file:
 
 ```bash
@@ -31,7 +37,7 @@ swift generate.swift schema.sql
 
 ### Example
 
-Assuming your Supabase schema file is named `schema.sql` and located in your project root, you would run the script like this:
+Assuming you've generated your Supabase schema file using the CLI command above, you would run the script like this:
 
 ```bash
 swift generate.swift schema.sql
@@ -40,7 +46,6 @@ swift generate.swift schema.sql
 This will generate a `generated.swift` file in your current directory. The generated file might look something like this:
 
 ```swift
-
 import Foundation
 
 struct users: Codable {
